@@ -275,34 +275,26 @@
   background-size: cover;
   background-position: center;
   position: relative;
-}
-
-.br-project-badge .live {
+}/* Base styling shared by all badges */
+.br-project-badge {
   position: absolute;
   bottom: 12px;
   left: 12px;
-  background-color: var(--br-orange);
   color: white;
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 11px;
   font-weight: bold;
   text-transform: uppercase;
+  z-index: 2;
 }
-
+.br-project-badge.live {
+  background-color: var(--br-orange, #FE6D06);
+}
 .br-project-badge.before-after {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background-color: rgba(17, 24, 39, 0.85);
-  color: white;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: bold;
-  text-transform: uppercase;
+  background-color: navy;
+  backdrop-filter: blur(4px); /* Adds a premium modern look */
 }
-
 .br-project-info {
   padding: 16px;
 }
