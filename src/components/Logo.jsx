@@ -4,7 +4,7 @@ export default function Logo({ className = '', height = 40 }) {
 
   return (
     <img
-      src="../src/assets/header-logo.png"
+      src="../src/assets/footer-logo.png"
       alt="Radex Objektmanagement GmbH"
       className={className}
       width={Math.round(width)}
