@@ -1,0 +1,647 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/kontakt",
+      "destination": "/#kontakt",
+      "permanent": true
+    },
+    {
+      "source": "/dienstleistungen",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber",
+      "destination": "/sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/radex-live",
+      "destination": "/#beispiele",
+      "permanent": true
+    },
+    {
+      "source": "/wohnungssanierung",
+      "destination": "/sanierung/wohnungssanierung",
+      "permanent": true
+    },
+    {
+      "source": "/badsanierung",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/gewerbeumbau",
+      "destination": "/gewerbe-objektsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/energetische-sanierung",
+      "destination": "/energetische-sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/elektrotechnik-rhein-main",
+      "destination": "/elektroinstallation-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/umbau",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/raumoptimierung",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/komplettbadsanierung-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/badmodernisierung-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/badrenovierung-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/gaeste-wc-sanieren-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/barrierefreies-bad-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/kleines-bad-sanieren-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/dusche-statt-badewanne-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/badewanne-austauschen-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/badsanierung-kosten-rhein-main",
+      "destination": "/badsanierung-kosten",
+      "permanent": true
+    },
+    {
+      "source": "/badsanierung-dauer-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/badsanierung-festpreis-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/barrierefreies-bad-kosten-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/badplanung-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/badsanierung/ablauf-badsanierung",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung/wohnung-sanieren-kosten",
+      "destination": "/sanierung/wohnungssanierung",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung/haus-sanieren-kosten",
+      "destination": "/sanierung/haussanierung",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung/altbau-sanieren-kosten",
+      "destination": "/sanierung/altbausanierung",
+      "permanent": true
+    },
+    {
+      "source": "/kernsanierung-rhein-main",
+      "destination": "/komplettsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/teilsanierung-rhein-main",
+      "destination": "/komplettsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/bauleitung-projektsteuerung-rhein-main",
+      "destination": "/generalunternehmer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/altbau-elektrik-erneuern-rhein-main",
+      "destination": "/elektroinstallation-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sicherungskasten-erneuern-rhein-main",
+      "destination": "/elektroinstallation-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/heizungsmodernisierung-rhein-main",
+      "destination": "/heizung-sanitaer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/waermepumpe-rhein-main",
+      "destination": "/heizung-sanitaer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanitaerinstallation-rhein-main",
+      "destination": "/heizung-sanitaer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/innenausbau-wohnung-rhein-main",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/innenausbau-haus-rhein-main",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/trockenbau-rhein-main",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/wand-entfernen-rhein-main",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/energieeffizienz-rhein-main",
+      "destination": "/energetische-sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-foerderung-rhein-main",
+      "destination": "/energetische-sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierungs-soforthilfe-rhein-main",
+      "destination": "/sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/schnellsanierung-rhein-main",
+      "destination": "/sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/bad-soforthilfe-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/schnelle-badsanierung-rhein-main",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/gewerbesanierung-rhein-main",
+      "destination": "/gewerbe-objektsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/bueroumbau-rhein-main",
+      "destination": "/gewerbe-objektsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/mieterausbau-rhein-main",
+      "destination": "/gewerbe-objektsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/haus-sanieren-wohnungssanierung-darmstadt",
+      "destination": "/haus-wohnung-bad-modernisieren-darmstadt",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-neu-isenburg",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-dietzenbach",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-rodgau",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-dreieich",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-maintal",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-seligenstadt",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-obertshausen",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-heusenstamm",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-langen",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/badsanierung-roedermark",
+      "destination": "/sanierung-roedermark",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-muehlheim-am-main",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-eschborn",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-bad-soden-am-taunus",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/villa-haus-modernisieren-bad-soden-am-taunus",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-hofheim-am-taunus",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-kronberg-im-taunus",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-koenigstein-im-taunus",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-ruesselsheim-am-main",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-oberursel",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-bad-homburg-vor-der-hoehe",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-bad-homburg",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-kelkheim",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/haus-modernisierung-kelkheim-taunus",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-gross-gerau",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-babenhausen",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-bad-nauheim",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/haus-wohnung-modernisieren-bad-vilbel",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-bruchkoebel",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-buettelborn",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-dieburg",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-egelsbach",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-erzhausen",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-floersheim-am-main",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-friedberg-hessen",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/einfamilienhaus-wohnung-sanieren-friedrichsdorf",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-ginsheim-gustavsburg",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-griesheim",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-grosskrotzenburg",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-gross-umstadt",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-hainburg",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/wohneigentum-modernisieren-hattersheim-am-main",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/haus-wohnung-modernisieren-karben",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/eigentumswohnung-haus-modernisieren-kelsterbach",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/immobilie-modernisieren-moerfelden-walldorf",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-nidderau",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-raunheim",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-schwalbach-am-taunus",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-sulzbach-taunus",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/sanierung-weiterstadt",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/reihenhaus-modernisieren-obertshausen",
+      "destination": "/einsatzgebiete-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/badsanierung",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/badsanierung-kosten-faktoren",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/badsanierung-planen-reihenfolge-ablauf-fehler",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/kleines-bad-sanieren",
+      "destination": "/badsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/heizung-sanitaer",
+      "destination": "/heizung-sanitaer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/heizung-modernisieren-bei-sanierung",
+      "destination": "/heizung-sanitaer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/waermepumpe-im-bestand-pruefen",
+      "destination": "/heizung-sanitaer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/sanitaerleitungen-erneuern-alte-wasserleitungen-pruefen",
+      "destination": "/heizung-sanitaer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/elektrotechnik",
+      "destination": "/elektroinstallation-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/elektroinstallation-erneuern-wohnung-haus",
+      "destination": "/elektroinstallation-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/energie",
+      "destination": "/energetische-sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/energetische-sanierung-im-bestand",
+      "destination": "/sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/energieeffizienz-verbessern-heizung-daemmung-lueftung",
+      "destination": "/energetische-sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/sanierung-foerderung-vor-baustart-pruefen",
+      "destination": "/sanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/generalunternehmer",
+      "destination": "/generalunternehmer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/komplettsanierung-oder-teilsanierung",
+      "destination": "/generalunternehmer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/sanierung-mit-generalunternehmer",
+      "destination": "/generalunternehmer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/bauleitung-bei-sanierung",
+      "destination": "/generalunternehmer-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/innenausbau-umbau",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/raumaufteilung-aendern-trockenbau",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/wand-entfernen-durchbruch-pruefen",
+      "destination": "/innenausbau-umbau-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/gewerbe",
+      "destination": "/gewerbe-objektsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/schimmel-asbest",
+      "destination": "/schadstoffsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/schimmel-bei-sanierung-ursache-pruefen",
+      "destination": "/schadstoffsanierung-rhein-main",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/wohnung-renovieren-oder-sanieren-unterschied",
+      "destination": "/sanierung/wohnungssanierung",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/wohnung-sanieren-nach-kauf",
+      "destination": "/sanierung/wohnungssanierung",
+      "permanent": true
+    },
+    {
+      "source": "/ratgeber/haus-modernisieren-nach-kauf-erbschaft",
+      "destination": "/sanierung/haussanierung",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

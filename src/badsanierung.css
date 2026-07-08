@@ -1,0 +1,694 @@
+/* ==========================================================================
+   BATHROOM RENOVATION PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+/* Typography & Colors specifically for this page */
+.badsanierung-page {
+  --br-orange: #f97316;
+  --br-orange-hover: #ea580c;
+  --br-green: #25D366;
+  --br-text: #333333;
+  --br-text-light: #666666;
+  --br-bg-light: #F9FAFB;
+  --br-border: #E5E7EB;
+  color: var(--br-text);
+  font-family: var(--font-body);
+}
+
+.br-section {
+  padding: 80px 0;
+}
+
+.br-bg-light {
+  background-color: var(--br-bg-light);
+}
+
+.br-section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--navy);
+}
+
+.br-section-subtitle {
+  font-size: 16px;
+  color: var(--br-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.br-btn-orange {
+  background-color: var(--br-orange);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.br-btn-orange:hover {
+  background-color: var(--br-orange-hover);
+  color: white;
+}
+
+.br-btn-outline-orange {
+  background-color: transparent;
+  color: var(--br-orange);
+  border: 2px solid var(--br-orange);
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.br-btn-outline-orange:hover {
+  background-color: var(--br-orange);
+  color: white;
+}
+
+.br-btn-whatsapp {
+  background-color: white;
+  color: var(--navy);
+  border: 1px solid var(--br-green);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.br-btn-whatsapp:hover {
+  background-color: #f0fdf4;
+}
+
+/* 1. Hero Split Layout */
+.br-hero-split {
+  display: flex;
+  min-height: 85vh;
+}
+
+.br-hero-left {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 60px 8%;
+}
+
+.br-hero-content {
+  max-width: 600px;
+}
+
+.br-hero-right {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+.br-hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--navy);
+}
+
+.br-hero-title span {
+  color: var(--br-orange);
+}
+
+.br-hero-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.br-hero-text {
+  font-size: 16px;
+  color: var(--br-text-light);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.br-hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.br-hero-micro {
+  font-size: 13px;
+  color: var(--br-text-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 992px) {
+  .br-hero-split {
+    flex-direction: column;
+    min-height: 0;        /* don't force 85vh on stacked mobile layout */
+  }
+  .br-hero-left {
+    align-items: flex-start;   /* top-align instead of vertical-centering tall content */
+    padding: 40px 24px;
+  }
+  .br-hero-right {
+    min-height: 320px;
+    order: 2;             /* image below the text on mobile */
+  }
+  .br-hero-title {
+    font-size: 34px;
+  }
+  .br-hero-actions {
+    flex-direction: column;
+  }
+  .br-hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* 2. Benefits (Why Radex) */
+.br-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.br-benefit-card {
+  background-color: white;
+  padding: 40px 24px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid var(--br-border);
+}
+
+.br-benefit-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.br-benefit-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.br-benefit-card p {
+  font-size: 14px;
+  color: var(--br-text-light);
+}
+
+/* 3. Projects */
+.br-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--br-border);
+}
+
+@media (max-width: 600px) {
+  .br-tabs {
+    gap: 16px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .br-tab {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+.br-tab {
+  padding-bottom: 12px;
+  font-weight: 600;
+  color: var(--br-text-light);
+  cursor: pointer;
+  position: relative;
+}
+
+.br-tab.active {
+  color: var(--br-orange);
+}
+
+.br-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--br-orange);
+}
+
+.br-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;
+  gap: 20px;
+}
+
+.br-project-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.br-project-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.br-project-badge.live {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: var(--br-orange);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.br-project-badge.before-after {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: rgba(17, 24, 39, 0.85);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.br-project-info {
+  padding: 16px;
+}
+
+.br-project-info h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--navy);
+}
+
+.br-project-info p {
+  color: var(--br-text-light);
+  font-size: 14px;
+}
+
+/* 4. Costs */
+.br-costs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .br-costs-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .br-costs-grid { grid-template-columns: 1fr; }
+}
+
+.br-cost-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--br-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.br-cost-header {
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.br-cost-header h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.br-cost-price {
+  font-size: 13px;
+  color: var(--br-text-light);
+}
+
+.br-cost-price span {
+  display: block;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 4px;
+}
+
+.br-cost-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  flex-grow: 1;
+}
+
+.br-cost-calculator {
+  background-color: white;
+  border-radius: 8px;
+  padding: 32px 20px;
+  border: 1px solid var(--br-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.br-cost-calculator h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.br-cost-calculator p {
+  font-size: 14px;
+  color: var(--br-text-light);
+  margin-bottom: 24px;
+}
+
+/* 5. Process */
+.br-process-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .br-process-flow {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .br-step-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+.br-process-step {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.br-step-number {
+  width: 28px;
+  height: 28px;
+  background-color: var(--br-orange);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.br-step-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid var(--br-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+}
+
+.br-process-step h4 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.br-process-step p {
+  font-size: 13px;
+  color: var(--br-text-light);
+}
+
+.br-step-arrow {
+  color: #999;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+/* 6. FAQ */
+.br-faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.br-faq-item {
+  background-color: white;
+  border: 1px solid var(--br-border);
+  border-radius: 6px;
+}
+
+.br-faq-item summary {
+  padding: 18px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.br-faq-item summary::-webkit-details-marker { display: none; }
+
+.br-faq-icon {
+  color: var(--br-orange);
+  transition: transform 0.3s;
+}
+
+.br-faq-item[open] .br-faq-icon {
+  transform: rotate(180deg);
+}
+
+.br-faq-answer {
+  padding: 0 24px 24px;
+  color: var(--br-text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 7. Contact */
+.br-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+@media (max-width: 900px) {
+  .br-contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.br-contact-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 500px) {
+  .br-contact-options { grid-template-columns: 1fr; }
+}
+
+.br-contact-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.br-contact-option strong {
+  display: block;
+  font-size: 15px;
+  color: var(--navy);
+}
+
+.br-contact-option p {
+  font-size: 14px;
+  color: var(--br-text-light);
+}
+
+.br-form {
+  background-color: white;
+  padding: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--br-border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.br-form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 500px) {
+  .br-form-row { flex-direction: column; }
+}
+
+.br-input-group {
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.br-input-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--br-text);
+}
+
+.br-input-group input,
+.br-input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--br-border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.br-input-group input:focus,
+.br-input-group textarea:focus {
+  outline: none;
+  border-color: var(--br-orange);
+}
+
+/* 8. SEO */
+.br-seo-dropdown {
+  background-color: white;
+  border: 1px solid var(--br-border);
+  border-radius: 6px;
+  margin-bottom: 40px;
+}
+
+.br-seo-summary {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Collapsed: visually clip the content but keep it in the DOM/render tree
+   so it stays indexable. Expanded: reveal in full. */
+.br-seo-content {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  border-top: 1px solid transparent;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.br-seo-content.open {
+  padding: 24px;
+  max-height: 6000px;
+  border-top-color: var(--br-border);
+}
+
+.br-seo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.br-seo-tag {
+  color: var(--br-text);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  border: 1px solid var(--br-border);
+}
+
+/* Footer Trust Items */
+.br-trust-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 24px;
+  padding-top: 40px;
+  border-top: 1px solid var(--br-border);
+}
+
+.br-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.br-trust-item strong {
+  display: block;
+  font-size: 16px;
+  color: var(--navy);
+}
+
+.br-trust-item span {
+  font-size: 12px;
+  color: var(--br-text-light);
+}
+
+/* Utility */
+.w-full { width: 100%; }
+.mt-4 { margin-top: 16px; }
+.mt-6 { margin-top: 24px; }
+.mt-10 { margin-top: 40px; }
+.mt-12 { margin-top: 48px; }
+.mt-16 { margin-top: 64px; }
+.mb-6 { margin-bottom: 24px; }
+.mb-8 { margin-bottom: 32px; }
+.mb-12 { margin-bottom: 48px; }
+.mb-16 { margin-bottom: 64px; }
+.p-8 { padding: 32px; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }

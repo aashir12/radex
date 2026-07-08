@@ -1,0 +1,375 @@
+.sk-rechner-section {
+  padding: 80px 0;
+  background: #f9fafb;
+}
+
+.sk-rechner-section--compact {
+  padding: 56px 0;
+}
+
+.sk-rechner-heading {
+  max-width: 780px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.sk-rechner-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #FE6D06;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sk-rechner-heading h2 {
+  margin: 0 0 14px;
+  color: #02318E;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.1;
+}
+
+.sk-rechner-heading p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.sk-rechner-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.sk-rechner-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: #02318E;
+}
+
+.sk-rechner-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 60px;
+  padding: 14px 18px;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.sk-rechner-tab:last-child {
+  border-right: 0;
+}
+
+.sk-rechner-tab.active {
+  background: #FE6D06;
+}
+
+.sk-rechner-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.86fr);
+  gap: 32px;
+  padding: 34px;
+}
+
+.sk-rechner-inputs {
+  display: grid;
+  gap: 22px;
+  align-content: start;
+}
+
+.sk-rechner-field label,
+.sk-rechner-form label {
+  display: grid;
+  gap: 8px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.sk-rechner-field select,
+.sk-rechner-number,
+.sk-rechner-form input {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #02318E;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.sk-rechner-field select {
+  padding: 0 14px;
+}
+
+.sk-rechner-number {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+}
+
+.sk-rechner-number input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-weight: 800;
+}
+
+.sk-rechner-number span {
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.sk-rechner-help {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.sk-rechner-params {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  color: #7c2d12;
+}
+
+.sk-rechner-params strong {
+  color: #02318E;
+}
+
+.sk-rechner-result {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding: 26px;
+  background: #02318E;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.sk-rechner-result-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  background: rgba(249, 115, 22, 0.16);
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  border-radius: 8px;
+  color: #fb923c;
+}
+
+.sk-rechner-result h3 {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.sk-rechner-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sk-rechner-price-row span {
+  color: #d1d5db;
+}
+
+.sk-rechner-price-row strong {
+  color: #fff;
+  font-size: 21px;
+  white-space: nowrap;
+}
+
+.sk-rechner-price-row--main strong {
+  color: #fb923c;
+  font-size: 28px;
+}
+
+.sk-rechner-range {
+  margin: 0;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.sk-rechner-note {
+  display: flex;
+  gap: 14px;
+  margin: 0 34px 34px;
+  padding: 18px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  color: #92400e;
+}
+
+.sk-rechner-note p {
+  margin: 5px 0 0;
+  line-height: 1.6;
+}
+
+.sk-rechner-lead {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 28px;
+  padding: 34px;
+  background: #f3f4f6;
+  border-top: 1px solid #e5e7eb;
+}
+
+.sk-rechner-lead h3 {
+  margin: 0 0 12px;
+  color: #02318E;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.sk-rechner-lead p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+.sk-rechner-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.sk-rechner-form input {
+  padding: 0 14px;
+}
+
+.sk-rechner-form input:focus,
+.sk-rechner-field select:focus,
+.sk-rechner-number:focus-within {
+  border-color: #FE6D06;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.16);
+}
+
+.sk-rechner-form button {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  border: 0;
+  border-radius: 8px;
+  background: #FE6D06;
+  color: #fff;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.sk-rechner-sent {
+  grid-column: 1 / -1;
+  padding: 12px 14px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  color: #065f46 !important;
+  font-size: 14px;
+}
+
+.sk-rechner-sent a {
+  color: #065f46;
+  font-weight: 800;
+}
+
+.sk-rechner-seo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 34px 34px;
+}
+
+.sk-rechner-seo a,
+.sk-rechner-seo span {
+  display: inline-flex;
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sk-rechner-seo a:hover {
+  border-color: #FE6D06;
+  color: #FE6D06;
+}
+
+@media (max-width: 900px) {
+  .sk-rechner-tabs,
+  .sk-rechner-grid,
+  .sk-rechner-lead {
+    grid-template-columns: 1fr;
+  }
+
+  .sk-rechner-tab {
+    justify-content: flex-start;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+@media (max-width: 640px) {
+  .sk-rechner-section {
+    padding: 56px 0;
+  }
+
+  .sk-rechner-grid,
+  .sk-rechner-lead {
+    padding: 22px;
+  }
+
+  .sk-rechner-note {
+    margin: 0 22px 22px;
+  }
+
+  .sk-rechner-form {
+    grid-template-columns: 1fr;
+  }
+
+  .sk-rechner-price-row {
+    display: grid;
+    gap: 6px;
+  }
+
+  .sk-rechner-price-row strong,
+  .sk-rechner-price-row--main strong {
+    font-size: 23px;
+    white-space: normal;
+  }
+
+  .sk-rechner-seo {
+    padding: 18px 22px 24px;
+  }
+}
