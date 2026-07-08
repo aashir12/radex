@@ -4,12 +4,12 @@ export default function Logo({ className = '', height = 40 }) {
 
   return (
     <img
-      src="/logo.png"
+      src="../src/assets/header-logo.png"
       alt="Radex Objektmanagement GmbH"
       className={className}
       width={Math.round(width)}
       height={height}
-      style={{ height: `${height}px`, width: 'auto', display: 'block' }}
+      style={{ height: `${height}px`, width: "auto", display: "block" }}
     />
   );
 }

@@ -277,7 +277,7 @@
   position: relative;
 }
 
-.br-project-badge.live {
+.br-project-badge .live {
   position: absolute;
   bottom: 12px;
   left: 12px;

@@ -44,8 +44,8 @@ export default function Hero() {
             <a href="#kontakt" className="home-btn-orange" style={{boxShadow: '0 10px 15px -3px rgba(249,115,22,0.3)'}}>
               Projekt anfragen <ArrowRight size={18} />
             </a>
-            <a href="https://wa.me/496074960620" target="_blank" rel="noopener noreferrer" className="home-btn-white">
-              WhatsApp schreiben <MessageSquare size={18} color="#25D366" />
+            <a href="https://wa.me/496074960620" target="_blank" rel="noopener noreferrer" className="home-btn-navy">
+              WhatsApp schreiben <MessageSquare size={18} color="orange" />
             </a>
           </div>
 
