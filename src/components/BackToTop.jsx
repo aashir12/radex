@@ -27,7 +27,8 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`back-to-top ${isVisible ? 'visible' : ''}`}
+      className={`back-to-top ${isVisible ? 'visible' : ''}` }
+      style={{ border: "1px solid white" }}
       aria-label="Zurück nach oben"
     >
       <ChevronUp size={28} />

@@ -352,12 +352,12 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(249, 115, 22, 0.35);
 }
-.home-btn-white {
+.home-btn-navy {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #fff;
-  color: #1f2937;
+  background-color: navy;
+  color: white;
   border: 1px solid #e5e7eb;
   padding: 14px 28px;
   border-radius: 8px;
@@ -365,8 +365,9 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
-.home-btn-white:hover {
+.home-btn-navy:hover {
   background-color: #f9fafb;
+  color:navy;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
   border-color: #d1d5db;
