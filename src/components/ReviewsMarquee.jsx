@@ -229,7 +229,7 @@ export default function ReviewsMarquee() {
       </div>
 
       <div className="container mt-12 text-center">
-        <a href="#bewertungen" className="br-btn-outline-orange inline-block">Alle Bewertungen ansehen</a>
+        <a href="#bewertungen" className="btn btn--secondary inline-block">Alle Bewertungen ansehen</a>
       </div>
     </section>
   );

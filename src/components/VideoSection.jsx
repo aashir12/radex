@@ -114,49 +114,122 @@ export default function VideoSection() {
   };
 
   return (
-    <section className="home-section" style={{background: '#111827', color: '#fff', padding: '80px 0'}}>
+    <section
+      className="home-section"
+      style={{ background: "#02318E", color: "#fff", padding: "80px 0" }}
+    >
       <div className="container">
-        <div style={{display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'center'}}>
-
-          <div style={{flex: '1 1 400px'}}>
-            <div style={{display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(249, 115, 22, 0.1)', color: '#f97316', padding: '6px 12px', borderRadius: '20px', fontSize: '14px', fontWeight: 'bold', marginBottom: '20px'}}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "40px",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ flex: "1 1 400px" }}>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                background: "rgba(249, 115, 22, 0.1)",
+                color: "#f97316",
+                padding: "6px 12px",
+                borderRadius: "20px",
+                fontSize: "14px",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
               <Play size={16} fill="#f97316" /> Radex Live
             </div>
-            <h2 className="text-3xl font-bold" style={{color: '#fff', marginBottom: '24px'}}>
+            <h2
+              className="text-3xl font-bold"
+              style={{ color: "#fff", marginBottom: "24px" }}
+            >
               Sehen Sie uns bei der Arbeit zu
             </h2>
-            <p style={{color: '#9ca3af', fontSize: '18px', lineHeight: 1.6, marginBottom: '32px'}}>
-              Wir legen größten Wert auf Transparenz und Premium-Qualität. Verfolgen Sie unsere aktuellen Sanierungsprojekte direkt von der Baustelle und überzeugen Sie sich selbst von unserer Arbeit.
+            <p
+              style={{
+                color: "#9ca3af",
+                fontSize: "18px",
+                lineHeight: 1.6,
+                marginBottom: "32px",
+              }}
+            >
+              Wir legen größten Wert auf Transparenz und Premium-Qualität.
+              Verfolgen Sie unsere aktuellen Sanierungsprojekte direkt von der
+              Baustelle und überzeugen Sie sich selbst von unserer Arbeit.
             </p>
-            <ul style={{listStyle: 'none', padding: 0, margin: '0 0 32px 0', color: '#d1d5db', display: 'flex', flexDirection: 'column', gap: '16px'}}>
-              <li style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}>
-                <div style={{color: '#f97316', marginTop: '2px'}}>✓</div>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: "0 0 32px 0",
+                color: "#d1d5db",
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+              }}
+            >
+              <li
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div style={{ color: "#f97316", marginTop: "2px" }}>✓</div>
                 <span>Echte Einblicke in unsere Bauphasen</span>
               </li>
-              <li style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}>
-                <div style={{color: '#f97316', marginTop: '2px'}}>✓</div>
+              <li
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div style={{ color: "#f97316", marginTop: "2px" }}>✓</div>
                 <span>Professionelle und saubere Ausführung</span>
               </li>
-              <li style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}>
-                <div style={{color: '#f97316', marginTop: '2px'}}>✓</div>
+              <li
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div style={{ color: "#f97316", marginTop: "2px" }}>✓</div>
                 <span>Modernste Materialien und Techniken</span>
               </li>
             </ul>
-            <a href="#kontakt" className="btn br-btn-orange">Kostenlose Beratung anfordern &rarr;</a>
+            <a href="#kontakt" className="btn br-btn-orange">
+              Kostenlose Beratung anfordern &rarr;
+            </a>
           </div>
 
-          <div style={{flex: '1 1 300px', display: 'flex', justifyContent: 'center'}}>
-            <div ref={containerRef} style={{
-              position: 'relative',
-              width: '100%',
-              maxWidth: '360px',
-              aspectRatio: '9/16',
-              borderRadius: '24px',
-              overflow: 'hidden',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-              border: '4px solid #1f2937',
-              backgroundColor: '#000'
-            }}>
+          <div
+            style={{
+              flex: "1 1 300px",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              ref={containerRef}
+              style={{
+                position: "relative",
+                width: "100%",
+                maxWidth: "360px",
+                aspectRatio: "9/16",
+                borderRadius: "24px",
+                overflow: "hidden",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+                border: "4px solid #1f2937",
+                backgroundColor: "#000",
+              }}
+            >
               <iframe
                 ref={iframeRef}
                 onLoad={handleIframeLoad}
@@ -165,37 +238,37 @@ export default function VideoSection() {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 style={{
-                  position: 'absolute',
-                  top: '-15%',
-                  left: '-30%',
-                  width: '160%',
-                  height: '130%',
-                  pointerEvents: 'none'
+                  position: "absolute",
+                  top: "-15%",
+                  left: "-30%",
+                  width: "160%",
+                  height: "130%",
+                  pointerEvents: "none",
                 }}
               ></iframe>
 
               {/* Sound toggle button */}
               <button
                 onClick={toggleSound}
-                aria-label={muted ? 'Ton einschalten' : 'Ton ausschalten'}
+                aria-label={muted ? "Ton einschalten" : "Ton ausschalten"}
                 style={{
-                  position: 'absolute',
-                  bottom: '16px',
-                  right: '16px',
+                  position: "absolute",
+                  bottom: "16px",
+                  right: "16px",
                   zIndex: 20,
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '50%',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: muted ? 'rgba(17,24,39,0.7)' : '#f97316',
-                  color: '#fff',
-                  backdropFilter: 'blur(4px)',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.35)',
-                  transition: 'all 0.25s ease'
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "50%",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: muted ? "rgba(17,24,39,0.7)" : "#f97316",
+                  color: "#fff",
+                  backdropFilter: "blur(4px)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.35)",
+                  transition: "all 0.25s ease",
                 }}
               >
                 {muted ? <VolumeX size={22} /> : <Volume2 size={22} />}
@@ -206,21 +279,21 @@ export default function VideoSection() {
                 <div
                   onClick={toggleSound}
                   style={{
-                    position: 'absolute',
-                    bottom: '24px',
-                    left: '16px',
+                    position: "absolute",
+                    bottom: "24px",
+                    left: "16px",
                     zIndex: 20,
-                    background: 'rgba(17,24,39,0.7)',
-                    color: '#fff',
-                    fontSize: '13px',
+                    background: "rgba(17,24,39,0.7)",
+                    color: "#fff",
+                    fontSize: "13px",
                     fontWeight: 600,
-                    padding: '8px 14px',
-                    borderRadius: '20px',
-                    backdropFilter: 'blur(4px)',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px'
+                    padding: "8px 14px",
+                    borderRadius: "20px",
+                    backdropFilter: "blur(4px)",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
                   }}
                 >
                   <Volume2 size={16} /> Ton einschalten
@@ -228,7 +301,6 @@ export default function VideoSection() {
               )}
             </div>
           </div>
-
         </div>
       </div>
     </section>

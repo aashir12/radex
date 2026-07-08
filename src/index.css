@@ -9,7 +9,7 @@
   --navy-light: #3B82F6;
   --navy-dark: #0F172A;
   --navy-rgb: 30, 58, 138;
-  
+  --blue:#02318E;
   --gold: #FE6603; /* Primary Brand Yellow/Gold */
   --gold-light: #FF8533; /* Soft Bright Yellow */
   --gold-dark: #E85A00; /* Deep Ochre Accent Yellow */
@@ -2130,7 +2130,7 @@ a {
    FOOTER SECTION
    ========================================================================== */
 .footer {
-  background-color: var(--navy-dark);
+  background-color: var(--blue);
   color: #fff;
   padding: 0 0 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
