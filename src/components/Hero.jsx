@@ -69,7 +69,7 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="home-hero-actions">
+          <div style={{ display: "flex", gap: "16px", marginTop: "24px" }}>
             <a
               href="#kontakt"
               className="home-btn-orange"
@@ -84,9 +84,6 @@ export default function Hero() {
               className="home-btn-navy"
             >
               WhatsApp schreiben <MessageSquare size={18} color="#fff" />
-            </a>
-            <a href="tel:+496074960620" className="home-btn-white">
-              Jetzt anrufen
             </a>
           </div>
 

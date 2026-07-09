@@ -1,9 +1,24 @@
-import { useEffect, useState } from 'react';
-import { Link } from '../router';
-import { Camera, MapPin, MessageSquare, Phone, CheckCircle2, ArrowRight, Award, Users, ShieldCheck, ChevronDown, AlertTriangle, Wrench } from 'lucide-react';
-import '../badsanierung.css';
-import useSeo, { buildFaqSchema } from '../useSeo';
-import SanierungskostenRechner from '../components/SanierungskostenRechner';
+import { useEffect, useState } from "react";
+import { Link } from "../router";
+import {
+  Camera,
+  MapPin,
+  MessageSquare,
+  Phone,
+  CheckCircle2,
+  ArrowRight,
+  Award,
+  Users,
+  ShieldCheck,
+  ChevronDown,
+  AlertTriangle,
+  Wrench,
+} from "lucide-react";
+import "../badsanierung.css";
+import useSeo, { buildFaqSchema } from "../useSeo";
+import SanierungskostenRechner from "../components/SanierungskostenRechner";
+import MainDecisionSection from "../components/MainDecisionSection";
+import VideoSection from "../components/VideoSection";
 
 const cityDataMap = {
   frankfurt: {
@@ -2682,18 +2697,71 @@ const cityDataMap = {
 };
 
 const serviceNavCards = [
-  { to: "/badsanierung-rhein-main", title: "Badsanierung", desc: "Komplette Bädermodernisierung, barrierefreie Umbauten und Wellnessoasen.", cta: "Badsanierung planen", img: "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=800" },
-  { to: "/sanierung/wohnungssanierung", title: "Wohnungssanierung", desc: "Modernisierung von Wohnungen inklusive Innenausbau und Bodengestaltung.", cta: "Wohnung sanieren", img: "https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?auto=format&fit=crop&q=80&w=800" },
-  { to: "/sanierung/haussanierung", title: "Haussanierung", desc: "Ganzheitliche Sanierung von Einfamilienhäusern und Mehrfamilienhäusern.", cta: "Haussanierung entdecken", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800" },
-  { to: "/sanierung/altbausanierung", title: "Altbausanierung", desc: "Fachgerechte Modernisierung von denkmalgeschützten Gebäuden und Altbauten.", cta: "Mehr zur Altbausanierung", img: "https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=800" },
-  { to: "/heizung-sanitaer-rhein-main", title: "Heizung & Sanitär", desc: "Heizungsmodernisierung, Wärmepumpen und Sanitärinstallationen.", cta: "Heizung & Sanitär modernisieren", img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800" },
-  { to: "/elektroinstallation-rhein-main", title: "Elektrotechnik", desc: "Erneuerung von Stromleitungen und moderner Gebäudetechnik.", cta: "Elektrik aufrüsten", img: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=800" },
-  { to: "/schadstoffsanierung-rhein-main", title: "Schimmel- & Schadstoffsanierung", desc: "Professionelle Beseitigung von Schimmel und Gefahrstoffen (Asbest).", cta: "Befundung anfragen", img: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=800" },
-  { to: "/gewerbe-objektsanierung-rhein-main", title: "Gewerbesanierung", desc: "Büroumbau, Mieterausbau und Sanierung von Gewerbeflächen.", cta: "Gewerbeprojekt besprechen", img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" }
+  {
+    to: "/badsanierung-rhein-main",
+    title: "Badsanierung",
+    desc: "Komplette Bädermodernisierung, barrierefreie Umbauten und Wellnessoasen.",
+    cta: "Badsanierung planen",
+    img: "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    to: "/sanierung/wohnungssanierung",
+    title: "Wohnungssanierung",
+    desc: "Modernisierung von Wohnungen inklusive Innenausbau und Bodengestaltung.",
+    cta: "Wohnung sanieren",
+    img: "https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    to: "/sanierung/haussanierung",
+    title: "Haussanierung",
+    desc: "Ganzheitliche Sanierung von Einfamilienhäusern und Mehrfamilienhäusern.",
+    cta: "Haussanierung entdecken",
+    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    to: "/sanierung/altbausanierung",
+    title: "Altbausanierung",
+    desc: "Fachgerechte Modernisierung von denkmalgeschützten Gebäuden und Altbauten.",
+    cta: "Mehr zur Altbausanierung",
+    img: "https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    to: "/heizung-sanitaer-rhein-main",
+    title: "Heizung & Sanitär",
+    desc: "Heizungsmodernisierung, Wärmepumpen und Sanitärinstallationen.",
+    cta: "Heizung & Sanitär modernisieren",
+    img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    to: "/elektroinstallation-rhein-main",
+    title: "Elektrotechnik",
+    desc: "Erneuerung von Stromleitungen und moderner Gebäudetechnik.",
+    cta: "Elektrik aufrüsten",
+    img: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    to: "/schadstoffsanierung-rhein-main",
+    title: "Schimmel- & Schadstoffsanierung",
+    desc: "Professionelle Beseitigung von Schimmel und Gefahrstoffen (Asbest).",
+    cta: "Befundung anfragen",
+    img: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    to: "/gewerbe-objektsanierung-rhein-main",
+    title: "Gewerbesanierung",
+    desc: "Büroumbau, Mieterausbau und Sanierung von Gewerbeflächen.",
+    cta: "Gewerbeprojekt besprechen",
+    img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+  },
 ];
 
 export default function CityPage({ cityId }) {
-  const city = cityDataMap[cityId] || { name: "Rhein-Main-Gebiet", heroImg: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1600", districts: [] };
+  const city = cityDataMap[cityId] || {
+    name: "Rhein-Main-Gebiet",
+    heroImg:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1600",
+    districts: [],
+  };
 
   const [openFaq, setOpenFaq] = useState(null);
   const [openSection, setOpenSection] = useState(null);
@@ -2703,11 +2771,26 @@ export default function CityPage({ cityId }) {
   }, [cityId]);
 
   const faqsData = [
-    { q: `Sind Sie auch in ${city.name} und Umgebung tätig?`, a: `Ja, Radex betreut Sanierungs- und Modernisierungsprojekte in ganz ${city.name} sowie den umliegenden Stadtteilen und Gemeinden.` },
-    { q: "Wie schnell erhalte ich ein Angebot?", a: "Nach einer Vor-Ort-Besichtigung oder der Auswertung Ihrer Fotos erhalten Sie in der Regel innerhalb von wenigen Tagen ein verbindliches Festpreisangebot." },
-    { q: "Bieten Sie eine Festpreisgarantie an?", a: "Ja, alle unsere Angebote sind Festpreise ohne versteckte Zusatzkosten." },
-    { q: "Kann ich Fotos meines Projekts vorab senden?", a: "Ja, senden Sie uns gerne Fotos per WhatsApp – wir geben Ihnen eine erste Einschätzung, bevor wir einen Vor-Ort-Termin vereinbaren." },
-    { q: "Sind Sie ein lizenzierter Fachbetrieb?", a: "Radex ist ein eingetragener SHK-Meisterbetrieb und zertifizierter Generalunternehmer." }
+    {
+      q: `Sind Sie auch in ${city.name} und Umgebung tätig?`,
+      a: `Ja, Radex betreut Sanierungs- und Modernisierungsprojekte in ganz ${city.name} sowie den umliegenden Stadtteilen und Gemeinden.`,
+    },
+    {
+      q: "Wie schnell erhalte ich ein Angebot?",
+      a: "Nach einer Vor-Ort-Besichtigung oder der Auswertung Ihrer Fotos erhalten Sie in der Regel innerhalb von wenigen Tagen ein verbindliches Festpreisangebot.",
+    },
+    {
+      q: "Bieten Sie eine Festpreisgarantie an?",
+      a: "Ja, alle unsere Angebote sind Festpreise ohne versteckte Zusatzkosten.",
+    },
+    {
+      q: "Kann ich Fotos meines Projekts vorab senden?",
+      a: "Ja, senden Sie uns gerne Fotos per WhatsApp – wir geben Ihnen eine erste Einschätzung, bevor wir einen Vor-Ort-Termin vereinbaren.",
+    },
+    {
+      q: "Sind Sie ein lizenzierter Fachbetrieb?",
+      a: "Radex ist ein eingetragener SHK-Meisterbetrieb und zertifizierter Generalunternehmer.",
+    },
   ];
 
   useSeo({
@@ -2715,17 +2798,28 @@ export default function CityPage({ cityId }) {
     description: `Sanierung & Badsanierung in ${city.name} aus einer Hand: Wohnungs-, Haus- & Altbausanierung, Heizung, Elektro & mehr vom SHK-Meisterbetrieb. Festpreis. Jetzt Beratung sichern!`,
     path: city.path,
     image: city.heroImg,
-    jsonLd: [buildFaqSchema(faqsData)]
+    jsonLd: [buildFaqSchema(faqsData)],
   });
 
   const SharedCTABlock = ({ isHero = false }) => (
-    <div className={`br-hero-actions ${isHero ? '' : 'mt-8'}`} style={{display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: isHero ? 'flex-start' : 'center'}}>
-      <a href="#kontakt" className="btn br-btn-orange">Kostenlose Beratung &rarr;</a>
-      <a href="https://wa.me/496074960620" target="_blank" rel="noopener noreferrer" className="btn br-btn-whatsapp">
-        Fotos senden <MessageSquare size={18} color="#25D366" style={{marginLeft: '8px'}} />
+    <div className="home-hero-actions">
+      <a
+        href="#kontakt"
+        className="home-btn-orange"
+        style={{ boxShadow: "0 10px 15px -3px rgba(249,115,22,0.3)" }}
+      >
+        Kostenlose Beratung <ArrowRight size={18} />
       </a>
-      <a href="tel:+496074960620" className="btn" style={{display: 'flex', alignItems: 'center', gap: '8px', background: isHero ? 'transparent' : '#fff', border: isHero ? '1px solid #111827' : '1px solid #d1d5db', color: '#111827', padding: '12px 24px', borderRadius: '4px', fontWeight: 'bold', textDecoration: 'none'}}>
-        <Phone size={18} /> Jetzt anrufen
+      <a
+        href="https://wa.me/496074960620"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="home-btn-navy"
+      >
+        WhatsApp schreiben <MessageSquare size={18} color="#fff" />
+      </a>
+      <a href="tel:+496074960620" className="home-btn-white">
+        Jetzt anrufen
       </a>
     </div>
   );
@@ -2737,14 +2831,17 @@ export default function CityPage({ cityId }) {
         <div className="br-hero-left">
           <div className="br-hero-content">
             <h1 className="br-hero-title">
-              Sanierung & Renovierung <br/>
+              Sanierung & Renovierung <br />
               <span>in {city.name}</span>
             </h1>
             <p className="br-hero-subtitle">
-              Ihr lokaler Experte für hochwertige Umbauten, Badsanierungen und Haustechnik in {city.name} und Umgebung.
+              Ihr lokaler Experte für hochwertige Umbauten, Badsanierungen und
+              Haustechnik in {city.name} und Umgebung.
             </p>
             <p className="br-hero-text">
-              Von der ersten Planung bis zur schlüsselfertigen Übergabe unterstützen wir Sie bei Ihrem Projekt in {city.name} – zum Festpreis und aus einer Hand.
+              Von der ersten Planung bis zur schlüsselfertigen Übergabe
+              unterstützen wir Sie bei Ihrem Projekt in {city.name} – zum
+              Festpreis und aus einer Hand.
             </p>
             <SharedCTABlock isHero={true} />
             <p className="br-hero-micro mt-4">
@@ -2752,13 +2849,22 @@ export default function CityPage({ cityId }) {
             </p>
           </div>
         </div>
-    
       </section>
 
       {/* 2. TRUST BAR */}
-      <section className="br-section" style={{paddingTop: '32px', paddingBottom: '32px', borderBottom: '1px solid #e5e7eb'}}>
+      <section
+        className="br-section"
+        style={{
+          paddingTop: "32px",
+          paddingBottom: "32px",
+          borderBottom: "1px solid #e5e7eb",
+        }}
+      >
         <div className="container">
-          <div className="br-trust-footer" style={{borderTop: 'none', paddingTop: 0}}>
+          <div
+            className="br-trust-footer"
+            style={{ borderTop: "none", paddingTop: 0 }}
+          >
             <div className="br-trust-item">
               <Award size={32} color="#aaa" />
               <div>
@@ -2798,32 +2904,105 @@ export default function CityPage({ cityId }) {
         </div>
       </section>
 
+      {/* decision section */}
+      <MainDecisionSection city={city} />
+
       {/* 3. WHAT WOULD YOU LIKE TO RENOVATE? (8 SERVICE NAV CARDS) */}
       <section className="br-section br-bg-light">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="br-section-title">Was möchten Sie in {city.name} sanieren?</h2>
+            <h2 className="br-section-title">
+              Was möchten Sie in {city.name} sanieren?
+            </h2>
             <p className="br-section-subtitle">
-              Wir bieten das gesamte Spektrum der Immobilienmodernisierung in {city.name} und Umgebung.
+              Wir bieten das gesamte Spektrum der Immobilienmodernisierung in{" "}
+              {city.name} und Umgebung.
             </p>
           </div>
 
-          <div className="br-projects-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'}}>
+          <div
+            className="br-projects-grid"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            }}
+          >
             {serviceNavCards.map((card, idx) => (
-              <Link key={idx} to={card.to} className="br-project-card" style={{textDecoration: 'none', color: 'inherit', border: '1px solid #e5e7eb'}}>
-                <div className="br-project-img" style={{ backgroundImage: `url(${card.img})`, height: '180px' }}></div>
-                <div className="br-project-info" style={{background: '#fff', padding: '24px'}}>
-                  <h4 style={{fontSize: '18px', marginBottom: '8px', color: '#111827'}}>{card.title} in {city.name}</h4>
-                  <p style={{color: '#4b5563', fontSize: '14px', marginBottom: '16px'}}>{card.desc}</p>
-                  <span style={{color: '#f97316', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px'}}>{card.cta} <ArrowRight size={16} /></span>
+              <Link
+                key={idx}
+                to={card.to}
+                className="br-project-card"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  border: "1px solid #e5e7eb",
+                }}
+              >
+                <div
+                  className="br-project-img"
+                  style={{
+                    backgroundImage: `url(${card.img})`,
+                    height: "180px",
+                  }}
+                ></div>
+                <div
+                  className="br-project-info"
+                  style={{ background: "#fff", padding: "24px" }}
+                >
+                  <h4
+                    style={{
+                      fontSize: "18px",
+                      marginBottom: "8px",
+                      color: "#111827",
+                    }}
+                  >
+                    {card.title} in {city.name}
+                  </h4>
+                  <p
+                    style={{
+                      color: "#4b5563",
+                      fontSize: "14px",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    {card.desc}
+                  </p>
+                  <span
+                    style={{
+                      color: "#f97316",
+                      fontWeight: 600,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "4px",
+                    }}
+                  >
+                    {card.cta} <ArrowRight size={16} />
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
 
-          <div className="text-center mt-12 p-8" style={{background: '#fff', borderRadius: '8px', border: '1px solid #e5e7eb'}}>
-            <h3 style={{fontSize: '24px', marginBottom: '16px', color: '#111827'}}>Planen Sie ein Projekt in {city.name}?</h3>
-            <p style={{color: '#4b5563', marginBottom: '24px'}}>Senden Sie uns Fotos und erhalten Sie eine professionelle Ersteinschätzung.</p>
+          <div
+            className="text-center mt-12 p-8"
+            style={{
+              background: "#fff",
+              borderRadius: "8px",
+              border: "1px solid #e5e7eb",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "24px",
+                marginBottom: "16px",
+                color: "#111827",
+              }}
+            >
+              Planen Sie ein Projekt in {city.name}?
+            </h3>
+            <p style={{ color: "#4b5563", marginBottom: "24px" }}>
+              Senden Sie uns Fotos und erhalten Sie eine professionelle
+              Ersteinschätzung.
+            </p>
             <SharedCTABlock />
           </div>
         </div>
@@ -2833,15 +3012,24 @@ export default function CityPage({ cityId }) {
       <section className="br-section">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="br-section-title">Referenzprojekte in {city.name} und Umgebung</h2>
+            <h2 className="br-section-title">
+              Referenzprojekte in {city.name} und Umgebung
+            </h2>
             <p className="br-section-subtitle">
-              Ein Auszug aus unseren abgeschlossenen und laufenden Sanierungsprojekten im Rhein-Main-Gebiet.
+              Ein Auszug aus unseren abgeschlossenen und laufenden
+              Sanierungsprojekten im Rhein-Main-Gebiet.
             </p>
           </div>
 
           <div className="br-projects-grid">
             <div className="br-project-card">
-              <div className="br-project-img" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?auto=format&fit=crop&q=80&w=800)' }}>
+              <div
+                className="br-project-img"
+                style={{
+                  backgroundImage:
+                    "url(https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?auto=format&fit=crop&q=80&w=800)",
+                }}
+              >
                 <span className="br-project-badge live">Live</span>
               </div>
               <div className="br-project-info">
@@ -2850,22 +3038,42 @@ export default function CityPage({ cityId }) {
               </div>
             </div>
             <div className="br-project-card">
-              <div className="br-project-img" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&q=80&w=800)' }}></div>
+              <div
+                className="br-project-img"
+                style={{
+                  backgroundImage:
+                    "url(https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&q=80&w=800)",
+                }}
+              ></div>
               <div className="br-project-info">
                 <h4>Wohnungssanierung – Küche & Boden</h4>
                 <p>{city.name}</p>
               </div>
             </div>
             <div className="br-project-card">
-              <div className="br-project-img" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800)' }}></div>
+              <div
+                className="br-project-img"
+                style={{
+                  backgroundImage:
+                    "url(https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800)",
+                }}
+              ></div>
               <div className="br-project-info">
                 <h4>Haussanierung – Wohnbereich</h4>
                 <p>{city.name} Umgebung</p>
               </div>
             </div>
             <div className="br-project-card">
-              <div className="br-project-img" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=800)' }}>
-                <span className="br-project-badge before-after">Vorher & Nachher</span>
+              <div
+                className="br-project-img"
+                style={{
+                  backgroundImage:
+                    "url(https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&q=80&w=800)",
+                }}
+              >
+                <span className="br-project-badge before-after">
+                  Vorher & Nachher
+                </span>
               </div>
               <div className="br-project-info">
                 <h4>Altbausanierung – Modernisierung</h4>
@@ -2875,9 +3083,27 @@ export default function CityPage({ cityId }) {
           </div>
 
           {/* Mid-page CTA */}
-          <div className="text-center mt-12 p-8" style={{background: '#fff3ea', borderRadius: '8px', border: '1px solid #fdba74'}}>
-            <h3 style={{fontSize: '24px', marginBottom: '16px', color: '#ea580c'}}>Noch Fragen zu Ihrem Projekt in {city.name}?</h3>
-            <p style={{color: '#4b5563', marginBottom: '24px'}}>Senden Sie uns Fotos und erhalten Sie eine professionelle Ersteinschätzung.</p>
+          <div
+            className="text-center mt-12 p-8"
+            style={{
+              background: "#fff3ea",
+              borderRadius: "8px",
+              border: "1px solid #fdba74",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "24px",
+                marginBottom: "16px",
+                color: "#ea580c",
+              }}
+            >
+              Noch Fragen zu Ihrem Projekt in {city.name}?
+            </h3>
+            <p style={{ color: "#4b5563", marginBottom: "24px" }}>
+              Senden Sie uns Fotos und erhalten Sie eine professionelle
+              Ersteinschätzung.
+            </p>
             <SharedCTABlock />
           </div>
         </div>
@@ -2887,60 +3113,267 @@ export default function CityPage({ cityId }) {
       <section className="br-section br-bg-light">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="br-section-title">Warum Eigentümer in {city.name} Radex wählen</h2>
+            <h2 className="br-section-title">
+              Warum Eigentümer in {city.name} Radex wählen
+            </h2>
           </div>
           <div className="br-benefits-grid">
-            <div className="br-benefit-card" style={{boxShadow: 'none', border: '1px solid #e5e7eb', background: '#fff'}}>
-              <div className="br-benefit-icon"><Award size={40} color="#f97316" /></div>
-              <h3>Eingetragener<br/>SHK-Meisterbetrieb</h3>
-              <p>Zertifizierter Handwerksbetrieb, der fachgerechte Arbeit nach aktuellen deutschen Normen und Vorschriften liefert.</p>
+            <div
+              className="br-benefit-card"
+              style={{
+                boxShadow: "none",
+                border: "1px solid #e5e7eb",
+                background: "#fff",
+              }}
+            >
+              <div className="br-benefit-icon">
+                <Award size={40} color="#f97316" />
+              </div>
+              <h3>
+                Eingetragener
+                <br />
+                SHK-Meisterbetrieb
+              </h3>
+              <p>
+                Zertifizierter Handwerksbetrieb, der fachgerechte Arbeit nach
+                aktuellen deutschen Normen und Vorschriften liefert.
+              </p>
             </div>
-            <div className="br-benefit-card" style={{boxShadow: 'none', border: '1px solid #e5e7eb', background: '#fff'}}>
-              <div className="br-benefit-icon"><Users size={40} color="#f97316" /></div>
-              <h3>Alles aus<br/>einer Hand</h3>
-              <p>Ein zentraler Ansprechpartner für Planung, Koordination und Ausführung Ihres Projekts in {city.name}.</p>
+            <div
+              className="br-benefit-card"
+              style={{
+                boxShadow: "none",
+                border: "1px solid #e5e7eb",
+                background: "#fff",
+              }}
+            >
+              <div className="br-benefit-icon">
+                <Users size={40} color="#f97316" />
+              </div>
+              <h3>
+                Alles aus
+                <br />
+                einer Hand
+              </h3>
+              <p>
+                Ein zentraler Ansprechpartner für Planung, Koordination und
+                Ausführung Ihres Projekts in {city.name}.
+              </p>
             </div>
-            <div className="br-benefit-card" style={{boxShadow: 'none', border: '1px solid #e5e7eb', background: '#fff'}}>
-              <div className="br-benefit-icon"><CheckCircle2 size={40} color="#f97316" /></div>
-              <h3>Saubere<br/>Sanierung</h3>
-              <p>Professionelle Staubschutzsysteme sorgen für einen sauberen Ablauf direkt vor Ort.</p>
+            <div
+              className="br-benefit-card"
+              style={{
+                boxShadow: "none",
+                border: "1px solid #e5e7eb",
+                background: "#fff",
+              }}
+            >
+              <div className="br-benefit-icon">
+                <CheckCircle2 size={40} color="#f97316" />
+              </div>
+              <h3>
+                Saubere
+                <br />
+                Sanierung
+              </h3>
+              <p>
+                Professionelle Staubschutzsysteme sorgen für einen sauberen
+                Ablauf direkt vor Ort.
+              </p>
             </div>
-            <div className="br-benefit-card" style={{boxShadow: 'none', border: '1px solid #e5e7eb', background: '#fff'}}>
-              <div className="br-benefit-icon"><ShieldCheck size={40} color="#f97316" /></div>
-              <h3>Festpreis-<br/>Garantie</h3>
-              <p>Transparente Angebote ohne versteckte Kosten oder unerwartete Extras.</p>
+            <div
+              className="br-benefit-card"
+              style={{
+                boxShadow: "none",
+                border: "1px solid #e5e7eb",
+                background: "#fff",
+              }}
+            >
+              <div className="br-benefit-icon">
+                <ShieldCheck size={40} color="#f97316" />
+              </div>
+              <h3>
+                Festpreis-
+                <br />
+                Garantie
+              </h3>
+              <p>
+                Transparente Angebote ohne versteckte Kosten oder unerwartete
+                Extras.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
+      <VideoSection />
+
       {/* 6. NEED IMMEDIATE HELP? (EMERGENCY & FAST SERVICES) */}
       <section className="br-section">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="br-section-title">Benötigen Sie schnelle Hilfe in {city.name}?</h2>
+            <h2 className="br-section-title">Schnelle Hilfe in {city.name}</h2>
             <p className="br-section-subtitle">
-              Für dringende Fälle bieten wir priorisierte Termine und schnelle Reaktionszeiten in {city.name} und Umgebung.
+              Für dringende Fälle bieten wir priorisierte Termine und eine
+              schnelle Reaktion in {city.name} und Umgebung.
             </p>
           </div>
-          <div className="br-benefits-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'}}>
-            <div className="br-benefit-card" style={{boxShadow: 'none', border: '1px solid #e5e7eb', background: '#fff'}}>
-              <div className="br-benefit-icon" style={{background: '#fff3ea'}}><AlertTriangle size={32} color="#ea580c" /></div>
-              <h3>Notfall-Badservice</h3>
-              <p>Schnelle Hilfe bei Wasserschäden, defekten Leitungen oder akuten Sanitärproblemen.</p>
-              <a href="tel:+496074960620" className="br-seo-tag" style={{display: 'inline-block', marginTop: '12px', fontWeight: 600, color: '#ea580c'}}>Jetzt anrufen &rarr;</a>
+          <div
+            className="br-benefits-grid"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
+            }}
+          >
+            <div
+              className="br-benefit-card"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "12px",
+                boxShadow: "0 10px 24px rgba(15, 23, 42, 0.06)",
+                border: "1px solid #e2e8f0",
+                background: "#ffffff",
+                borderRadius: "18px",
+                padding: "24px",
+              }}
+            >
+              <div
+                className="br-benefit-icon"
+                style={{
+                  background: "#eff6ff",
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "12px",
+                }}
+              >
+                <AlertTriangle
+                  size={22}
+                  color="#ea580c"
+                  style={{ margin: "auto" }}
+                />
+              </div>
+              <h3 style={{ margin: 0, fontSize: "20px", color: "var(--navy)" }}>
+                Notfall-Badservice
+              </h3>
+              <p style={{ margin: 0, color: "#475569", lineHeight: 1.65 }}>
+                Schnelle Hilfe bei Wasserschäden, defekten Leitungen oder akuten
+                Sanitärproblemen.
+              </p>
+              <a
+                href="tel:+496074960620"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  marginTop: "4px",
+                  fontWeight: 700,
+                  color: "#ea580c",
+                }}
+              >
+                Jetzt anrufen &rarr;
+              </a>
             </div>
-            <div className="br-benefit-card" style={{boxShadow: 'none', border: '1px solid #e5e7eb', background: '#fff'}}>
-              <div className="br-benefit-icon" style={{background: '#fff3ea'}}><Wrench size={32} color="#ea580c" /></div>
-              <h3>Express-Sanierung</h3>
-              <p>Schnelle Projektabwicklung für dringende Modernisierungen mit kurzer Vorlaufzeit.</p>
-              <a href="#kontakt" className="br-seo-tag" style={{display: 'inline-block', marginTop: '12px', fontWeight: 600, color: '#ea580c'}}>Termin anfragen &rarr;</a>
+            <div
+              className="br-benefit-card"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "12px",
+                boxShadow: "0 10px 24px rgba(15, 23, 42, 0.06)",
+                border: "1px solid #e2e8f0",
+                background: "#ffffff",
+                borderRadius: "18px",
+                padding: "24px",
+              }}
+            >
+              <div
+                className="br-benefit-icon"
+                style={{
+                  background: "#eff6ff",
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "12px",
+                }}
+              >
+                <Wrench size={22} color="#ea580c" style={{ margin: "auto" }} />
+              </div>
+              <h3 style={{ margin: 0, fontSize: "20px", color: "var(--navy)" }}>
+                Express-Sanierung
+              </h3>
+              <p style={{ margin: 0, color: "#475569", lineHeight: 1.65 }}>
+                Schnelle Projektabwicklung für dringende Modernisierungen mit
+                kurzer Vorlaufzeit.
+              </p>
+              <a
+                href="https://gleeful-taiyaki.netlify.app/sanierung-babenhausen#kontakt"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  marginTop: "4px",
+                  fontWeight: 700,
+                  color: "#ea580c",
+                }}
+              >
+                Termin anfragen &rarr;
+              </a>
             </div>
-            <div className="br-benefit-card" style={{boxShadow: 'none', border: '1px solid #e5e7eb', background: '#fff'}}>
-              <div className="br-benefit-icon" style={{background: '#fff3ea'}}><CheckCircle2 size={32} color="#ea580c" /></div>
-              <h3>Schadstoff-Sofortbefundung</h3>
-              <p>Schnelle Einschätzung bei Schimmelbefall oder Verdacht auf Asbest in Bestandsgebäuden.</p>
-              <Link to="/schadstoffsanierung-rhein-main" className="br-seo-tag" style={{display: 'inline-block', marginTop: '12px', fontWeight: 600, color: '#ea580c'}}>Befundung anfragen &rarr;</Link>
+            <div
+              className="br-benefit-card"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "12px",
+                boxShadow: "0 10px 24px rgba(15, 23, 42, 0.06)",
+                border: "1px solid #e2e8f0",
+                background: "#ffffff",
+                borderRadius: "18px",
+                padding: "24px",
+              }}
+            >
+              <div
+                className="br-benefit-icon"
+                style={{
+                  background: "#eff6ff",
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "12px",
+                }}
+              >
+                <ShieldCheck
+                  size={22}
+                  color="#ea580c"
+                  style={{ margin: "auto" }}
+                />
+              </div>
+              <h3 style={{ margin: 0, fontSize: "20px", color: "var(--navy)" }}>
+                Schadstoff-Sofortbefundung
+              </h3>
+              <p style={{ margin: 0, color: "#475569", lineHeight: 1.65 }}>
+                Schnelle Einschätzung bei Schimmelbefall oder Verdacht auf
+                Asbest in Bestandsgebäuden.
+              </p>
+              <a
+                href="https://gleeful-taiyaki.netlify.app/schadstoffsanierung-rhein-main"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  marginTop: "4px",
+                  fontWeight: 700,
+                  color: "#ea580c",
+                }}
+              >
+                Befundung anfragen &rarr;
+              </a>
             </div>
           </div>
         </div>
@@ -2950,64 +3383,175 @@ export default function CityPage({ cityId }) {
 
       {/* 7. DETAILED SERVICE INFORMATION + LOCAL DISTRICTS (ACCORDIONS) */}
 
-          {/* WEITERE INFORMATIONEN - Everything in ONE accordion */}
+      {/* WEITERE INFORMATIONEN - Everything in ONE accordion */}
       <section className="br-section br-bg-light">
         <div className="container">
-          <div style={{border: '1px solid #e5e7eb', borderRadius: '8px', background: '#fff'}}>
+          <div
+            style={{
+              border: "1px solid #e5e7eb",
+              borderRadius: "8px",
+              background: "#fff",
+            }}
+          >
             <button
-              onClick={() => setOpenSection(openSection === 'all' ? null : 'all')}
-              aria-expanded={openSection === 'all'}
+              onClick={() =>
+                setOpenSection(openSection === "all" ? null : "all")
+              }
+              aria-expanded={openSection === "all"}
               aria-controls="city-seo-content"
-              style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '22px 24px', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '18px', color: 'var(--navy)', textAlign: 'left'}}
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: "22px 24px",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontWeight: 700,
+                fontSize: "18px",
+                color: "var(--navy)",
+                textAlign: "left",
+              }}
             >
               <span>Alle Informationen anzeigen</span>
-              <ChevronDown size={22} style={{transform: openSection === 'all' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease', flexShrink: 0, color: 'var(--gold)'}} />
+              <ChevronDown
+                size={22}
+                style={{
+                  transform:
+                    openSection === "all" ? "rotate(180deg)" : "rotate(0deg)",
+                  transition: "transform 0.3s ease",
+                  flexShrink: 0,
+                  color: "var(--gold)",
+                }}
+              />
             </button>
 
-            {openSection === 'all' && (
-              <div style={{padding: '0 24px 28px'}}>
-
+            {openSection === "all" && (
+              <div style={{ padding: "0 24px 28px" }}>
                 {/* Intro + service tags */}
                 <div className="br-seo-text-block mb-8">
                   <p className="mb-4 text-gray-600">
-                    Als erfahrener SHK-Meisterbetrieb und Generalunternehmer realisiert Radex Sanierungsprojekte für Privathaushalte,
+                    Als erfahrener SHK-Meisterbetrieb und Generalunternehmer
+                    realisiert Radex Sanierungsprojekte für Privathaushalte,
                     Kapitalanleger und Gewerbekunden in {city.name}.
                   </p>
                 </div>
 
                 {/* Topic sections from docx content */}
-                {city.extraContent && Array.isArray(city.extraContent) && city.extraContent.map((item, idx) => (
-                  <div key={idx} style={{marginBottom: '24px'}}>
-                    <h4 style={{fontSize: '16px', fontWeight: 700, color: 'var(--navy)', marginBottom: '8px'}}>{item.title}</h4>
-                    <p style={{color: '#4b5563', lineHeight: '1.7', fontSize: '15px'}}>{item.text}</p>
-                  </div>
-                ))}
+                {city.extraContent &&
+                  Array.isArray(city.extraContent) &&
+                  city.extraContent.map((item, idx) => (
+                    <div key={idx} style={{ marginBottom: "24px" }}>
+                      <h4
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: 700,
+                          color: "var(--navy)",
+                          marginBottom: "8px",
+                        }}
+                      >
+                        {item.title}
+                      </h4>
+                      <p
+                        style={{
+                          color: "#4b5563",
+                          lineHeight: "1.7",
+                          fontSize: "15px",
+                        }}
+                      >
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
 
                 {/* Districts */}
                 {city.districts && city.districts.length > 0 && (
-                  <div style={{marginTop: '32px', marginBottom: '32px'}}>
-                    <p className="text-center mb-4 font-semibold">Wir betreuen Sanierungsprojekte in folgenden Stadtteilen und Umgebungsgemeinden von {city.name}:</p>
+                  <div style={{ marginTop: "32px", marginBottom: "32px" }}>
+                    <p className="text-center mb-4 font-semibold">
+                      Wir betreuen Sanierungsprojekte in folgenden Stadtteilen
+                      und Umgebungsgemeinden von {city.name}:
+                    </p>
                     <div className="br-seo-tags">
                       {city.districts.map((district, idx) => (
-                        <span key={idx} className="br-seo-tag">{district}</span>
+                        <span key={idx} className="br-seo-tag">
+                          {district}
+                        </span>
                       ))}
                     </div>
                   </div>
                 )}
 
                 {/* FAQ moved inside */}
-                <div style={{marginTop: '32px', borderTop: '1px solid #e5e7eb', paddingTop: '24px'}}>
-                  <h3 style={{fontSize: '20px', fontWeight: 700, color: 'var(--navy)', marginBottom: '16px', textAlign: 'center'}}>Häufig gestellte Fragen zu {city.name}</h3>
+                <div
+                  style={{
+                    marginTop: "32px",
+                    borderTop: "1px solid #e5e7eb",
+                    paddingTop: "24px",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: 700,
+                      color: "var(--navy)",
+                      marginBottom: "16px",
+                      textAlign: "center",
+                    }}
+                  >
+                    Häufig gestellte Fragen zu {city.name}
+                  </h3>
                   <div className="br-faq-grid">
                     {faqsData.map((faq, i) => (
                       <div key={i} className="home-faq-item">
-                        <button className="home-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
-                          <span style={{fontWeight: 600, color: '#1f2937', fontSize: '15px', textAlign: 'left'}}>{faq.q}</span>
-                          <ChevronDown style={{transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease'}} color="#9ca3af" size={16} />
+                        <button
+                          className="home-faq-btn"
+                          onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        >
+                          <span
+                            style={{
+                              fontWeight: 600,
+                              color: "#1f2937",
+                              fontSize: "15px",
+                              textAlign: "left",
+                            }}
+                          >
+                            {faq.q}
+                          </span>
+                          <ChevronDown
+                            style={{
+                              transform:
+                                openFaq === i
+                                  ? "rotate(180deg)"
+                                  : "rotate(0deg)",
+                              transition: "transform 0.3s ease",
+                            }}
+                            color="#9ca3af"
+                            size={16}
+                          />
                         </button>
-                        <div className="home-faq-answer" style={{display: 'grid', gridTemplateRows: openFaq === i ? '1fr' : '0fr', transition: 'grid-template-rows 0.3s ease', padding: 0}}>
-                          <div style={{overflow: 'hidden'}}>
-                            <div style={{borderTop: '1px solid #f9fafb', paddingTop: '14px', paddingBottom: '14px', paddingLeft: '14px', paddingRight: '14px', color: '#4b5563', fontSize: '14px', lineHeight: '1.6'}}>
+                        <div
+                          className="home-faq-answer"
+                          style={{
+                            display: "grid",
+                            gridTemplateRows: openFaq === i ? "1fr" : "0fr",
+                            transition: "grid-template-rows 0.3s ease",
+                            padding: 0,
+                          }}
+                        >
+                          <div style={{ overflow: "hidden" }}>
+                            <div
+                              style={{
+                                borderTop: "1px solid #f9fafb",
+                                paddingTop: "14px",
+                                paddingBottom: "14px",
+                                paddingLeft: "14px",
+                                paddingRight: "14px",
+                                color: "#4b5563",
+                                fontSize: "14px",
+                                lineHeight: "1.6",
+                              }}
+                            >
                               {faq.a}
                             </div>
                           </div>
@@ -3016,7 +3560,6 @@ export default function CityPage({ cityId }) {
                     ))}
                   </div>
                 </div>
-
               </div>
             )}
           </div>
@@ -3025,10 +3568,17 @@ export default function CityPage({ cityId }) {
 
       {/* 10. CONTACT / FINAL CTA */}
       <section id="kontakt" className="br-section">
-        <div className="container" style={{maxWidth: '800px', textAlign: 'center'}}>
-          <h2 className="br-section-title">Ihre lokale Handwerksfirma in {city.name}</h2>
-          <p className="br-section-subtitle" style={{marginBottom: '30px'}}>
-            Als zertifizierter Generalunternehmer betreuen wir Ihr Vorhaben in {city.name} von der Planung bis zur finalen Abnahme. Kontaktieren Sie uns für eine kostenlose Beratung vor Ort.
+        <div
+          className="container"
+          style={{ maxWidth: "800px", textAlign: "center" }}
+        >
+          <h2 className="br-section-title">
+            Ihre lokale Handwerksfirma in {city.name}
+          </h2>
+          <p className="br-section-subtitle" style={{ marginBottom: "30px" }}>
+            Als zertifizierter Generalunternehmer betreuen wir Ihr Vorhaben in{" "}
+            {city.name} von der Planung bis zur finalen Abnahme. Kontaktieren
+            Sie uns für eine kostenlose Beratung vor Ort.
           </p>
           <SharedCTABlock />
         </div>
