@@ -1,8 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
-import { Play, Volume2, VolumeX } from 'lucide-react';
-import '../home.css';
+import { useEffect, useRef, useState } from "react";
+import {
+  Play,
+  Volume2,
+  VolumeX,
+  ShieldCheck,
+  Award,
+  Users,
+  CheckCircle2,
+} from "lucide-react";
+import "../home.css";
 
-const VIDEO_ID = '4A0f7A5mPLI';
+const VIDEO_ID = "4A0f7A5mPLI";
 
 export default function VideoSection() {
   const iframeRef = useRef(null);
@@ -19,31 +27,31 @@ export default function VideoSection() {
   // Control the player via the YouTube iframe postMessage API.
   const sendCommand = (func, args = []) => {
     iframeRef.current?.contentWindow?.postMessage(
-      JSON.stringify({ event: 'command', func, args }),
-      '*'
+      JSON.stringify({ event: "command", func, args }),
+      "*",
     );
   };
 
   // Play only while in view; pause otherwise. No-op until the player is ready.
   const syncPlayback = () => {
     if (!playerReadyRef.current) return;
-    sendCommand(inViewRef.current ? 'playVideo' : 'pauseVideo');
+    sendCommand(inViewRef.current ? "playVideo" : "pauseVideo");
   };
 
   // Once the iframe loads, register the JS API listener and apply the
   // current in-view state (commands sent before this are dropped by YouTube).
   const handleIframeLoad = () => {
     iframeRef.current?.contentWindow?.postMessage(
-      JSON.stringify({ event: 'listening', id: VIDEO_ID }),
-      '*'
+      JSON.stringify({ event: "listening", id: VIDEO_ID }),
+      "*",
     );
     playerReadyRef.current = true;
     syncPlayback();
   };
 
   const unmute = () => {
-    sendCommand('unMute');
-    sendCommand('setVolume', [100]);
+    sendCommand("unMute");
+    sendCommand("setVolume", [100]);
     setMuted(false);
   };
 
@@ -57,12 +65,17 @@ export default function VideoSection() {
       }
       removeListeners();
     };
-    const events = ['pointerdown', 'touchstart', 'keydown', 'scroll', 'wheel'];
+    const events = ["pointerdown", "touchstart", "keydown", "scroll", "wheel"];
     const removeListeners = () => {
-      events.forEach((e) => window.removeEventListener(e, handleFirstInteraction));
+      events.forEach((e) =>
+        window.removeEventListener(e, handleFirstInteraction),
+      );
     };
     events.forEach((e) =>
-      window.addEventListener(e, handleFirstInteraction, { once: false, passive: true })
+      window.addEventListener(e, handleFirstInteraction, {
+        once: false,
+        passive: true,
+      }),
     );
     return removeListeners;
   }, []);
@@ -79,7 +92,7 @@ export default function VideoSection() {
         inViewRef.current = entry.isIntersecting;
         syncPlayback();
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     observer.observe(target);
@@ -88,16 +101,16 @@ export default function VideoSection() {
     // becomes visible again (only if still in view).
     const handleVisibility = () => {
       if (document.hidden) {
-        sendCommand('pauseVideo');
+        sendCommand("pauseVideo");
       } else {
         syncPlayback();
       }
     };
-    document.addEventListener('visibilitychange', handleVisibility);
+    document.addEventListener("visibilitychange", handleVisibility);
 
     return () => {
       observer.disconnect();
-      document.removeEventListener('visibilitychange', handleVisibility);
+      document.removeEventListener("visibilitychange", handleVisibility);
     };
   }, []);
 
@@ -105,29 +118,58 @@ export default function VideoSection() {
     if (muted) {
       userMutedRef.current = false;
       unmute();
-      sendCommand('playVideo');
+      sendCommand("playVideo");
     } else {
       userMutedRef.current = true;
-      sendCommand('mute');
+      sendCommand("mute");
       setMuted(true);
     }
   };
 
   return (
-    <section
-      className="home-section"
-      style={{ background: "#02318E", color: "#fff", padding: "80px 0" }}
-    >
+    <section className="home-section home-video-section">
       <div className="container">
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "40px",
-            alignItems: "center",
-          }}
-        >
-          <div style={{ flex: "1 1 400px" }}>
+        <div className="home-video-grid">
+          <div className="home-video-copy">
+            <div className="home-video-trust-bar">
+              <div className="home-video-trust-item">
+                <div className="home-video-trust-icon">
+                  <ShieldCheck size={18} />
+                </div>
+                <div>
+                  <div className="home-video-trust-number">500+</div>
+                  <div className="home-video-trust-label">Projekte abgeschlossen</div>
+                </div>
+              </div>
+              <div className="home-video-trust-item">
+                <div className="home-video-trust-icon">
+                  <Award size={18} />
+                </div>
+                <div>
+                  <div className="home-video-trust-number">100%</div>
+                  <div className="home-video-trust-label">Festpreisgarantie</div>
+                </div>
+              </div>
+              <div className="home-video-trust-item">
+                <div className="home-video-trust-icon">
+                  <Users size={18} />
+                </div>
+                <div>
+                  <div className="home-video-trust-number">60+</div>
+                  <div className="home-video-trust-label">Städte im Rhein-Main</div>
+                </div>
+              </div>
+              <div className="home-video-trust-item">
+                <div className="home-video-trust-icon">
+                  <CheckCircle2 size={18} />
+                </div>
+                <div>
+                  <div className="home-video-trust-number">24h</div>
+                  <div className="home-video-trust-label">Schnelle Rückmeldung</div>
+                </div>
+              </div>
+            </div>
+
             <div
               style={{
                 display: "inline-flex",
@@ -209,27 +251,8 @@ export default function VideoSection() {
             </a>
           </div>
 
-          <div
-            style={{
-              flex: "1 1 300px",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              ref={containerRef}
-              style={{
-                position: "relative",
-                width: "100%",
-                maxWidth: "360px",
-                aspectRatio: "9/16",
-                borderRadius: "24px",
-                overflow: "hidden",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-                border: "4px solid #1f2937",
-                backgroundColor: "#000",
-              }}
-            >
+          <div className="home-video-player">
+            <div ref={containerRef} className="home-video-player-card">
               <iframe
                 ref={iframeRef}
                 onLoad={handleIframeLoad}

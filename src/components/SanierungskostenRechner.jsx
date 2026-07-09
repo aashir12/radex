@@ -349,9 +349,9 @@ export default function SanierungskostenRechner({
             <Link to="/badsanierung-kosten">Badsanierung Kosten</Link>
             <Link to="/wohnungssanierung-kosten">Wohnungssanierung Kosten</Link>
             <Link to="/altbausanierung-kosten">Altbausanierung Kosten</Link>
-            <span>Kernsanierung Kosten</span>
-            <span>Sanierung Frankfurt</span>
-            <span>Sanierung Rhein-Main</span>
+            <Link to="/komplettsanierung-rhein-main">Kernsanierung Kosten</Link>
+            <Link to="/sanierung-frankfurt-am-main">Sanierung Frankfurt</Link>
+            <Link to="/sanierung-rhein-main">Sanierung Rhein-Main</Link>
             <span>{active.seoText}</span>
           </div>
         </div>

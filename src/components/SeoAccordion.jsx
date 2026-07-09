@@ -11,6 +11,8 @@ export default function SeoAccordion() {
         <div style={{background: '#fff', border: '1px solid #e5e7eb', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'}}>
           <button 
             onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-controls="seo-accordion-content"
             style={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '24px', background: 'none', border: 'none', cursor: 'pointer', outline: 'none'}}
           >
             <div style={{display: 'flex', alignItems: 'center', gap: '16px'}}>
@@ -18,7 +20,7 @@ export default function SeoAccordion() {
                 <Shield size={24} color="#6b7280" />
               </div>
               <div style={{textAlign: 'left'}}>
-                <h3 className="font-bold text-navy text-lg" style={{marginBottom: '4px'}}>Weitere Fachinformationen anzeigen</h3>
+                <h3 className="font-bold text-navy text-lg" style={{marginBottom: '4px'}}>Alle Informationen anzeigen</h3>
                 <p className="text-gray-500 text-sm">Ablauf, Förderungen, Sanierung im Detail und mehr.</p>
               </div>
             </div>

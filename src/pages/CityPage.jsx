@@ -2752,12 +2752,7 @@ export default function CityPage({ cityId }) {
             </p>
           </div>
         </div>
-        <div className="br-hero-right" style={{ backgroundImage: `url(${city.heroImg})` }}>
-          <div style={{position: 'absolute', bottom: '24px', left: '24px', background: 'rgba(255,255,255,0.95)', padding: '10px 20px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px'}}>
-            <MapPin size={24} color="#ea580c" />
-            <span style={{fontWeight: 'bold', fontSize: '18px', color: '#111827'}}>Radex in {city.name}</span>
-          </div>
-        </div>
+    
       </section>
 
       {/* 2. TRUST BAR */}
@@ -2961,9 +2956,11 @@ export default function CityPage({ cityId }) {
           <div style={{border: '1px solid #e5e7eb', borderRadius: '8px', background: '#fff'}}>
             <button
               onClick={() => setOpenSection(openSection === 'all' ? null : 'all')}
+              aria-expanded={openSection === 'all'}
+              aria-controls="city-seo-content"
               style={{width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '22px 24px', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '18px', color: 'var(--navy)', textAlign: 'left'}}
             >
-              <span>Weitere Informationen zu {city.name}</span>
+              <span>Alle Informationen anzeigen</span>
               <ChevronDown size={22} style={{transform: openSection === 'all' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease', flexShrink: 0, color: 'var(--gold)'}} />
             </button>
 
