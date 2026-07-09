@@ -1,12 +1,36 @@
-import { Link } from '../router';
-import { Camera, MessageSquare, ArrowRight, Bath, Building2, Home as HomeIcon, Briefcase } from 'lucide-react';
+import { Link } from "../router";
+import {
+  Camera,
+  MessageSquare,
+  ArrowRight,
+  Bath,
+  Building2,
+  Home as HomeIcon,
+  Briefcase,
+} from "lucide-react";
 
 export default function Hero() {
   const quickLinks = [
-    { icon: <Bath size={20} color="#f97316" />, label: 'Badsanierung', to: '/badsanierung-rhein-main' },
-    { icon: <Building2 size={20} color="#f97316" />, label: 'Wohnung', to: '/sanierung/wohnungssanierung' },
-    { icon: <HomeIcon size={20} color="#f97316" />, label: 'Haus', to: '/sanierung/haussanierung' },
-    { icon: <Briefcase size={20} color="#f97316" />, label: 'Gewerbe', to: '/gewerbe-objektsanierung-rhein-main' }
+    {
+      icon: <Bath size={20} color="#f97316" />,
+      label: "Badsanierung",
+      to: "/badsanierung-rhein-main",
+    },
+    {
+      icon: <Building2 size={20} color="#f97316" />,
+      label: "Wohnung",
+      to: "/sanierung/wohnungssanierung",
+    },
+    {
+      icon: <HomeIcon size={20} color="#f97316" />,
+      label: "Haus",
+      to: "/sanierung/haussanierung",
+    },
+    {
+      icon: <Briefcase size={20} color="#f97316" />,
+      label: "Gewerbe",
+      to: "/gewerbe-objektsanierung-rhein-main",
+    },
   ];
 
   return (
@@ -14,7 +38,10 @@ export default function Hero() {
       {/* Background Image */}
       <div
         className="home-hero-bg"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000)' }}
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000)",
+        }}
       ></div>
 
       {/* White Gradient Overlay */}
@@ -28,7 +55,9 @@ export default function Hero() {
           </h1>
 
           <h2 className="home-hero-subtitle">
-            Radex – Ihr lizenzierter SHK-Meisterbetrieb und Generalunternehmer für Badsanierungen, Immobiliensanierungen und Modernisierungsprojekte im Rhein-Main-Gebiet.
+            Radex – Ihr lizenzierter SHK-Meisterbetrieb und Generalunternehmer
+            für Badsanierungen, Immobiliensanierungen und
+            Modernisierungsprojekte im Rhein-Main-Gebiet.
           </h2>
 
           <div className="home-hero-quicklinks">
@@ -40,16 +69,36 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="home-hero-actions">
-            <a href="#kontakt" className="home-btn-orange" style={{boxShadow: '0 10px 15px -3px rgba(249,115,22,0.3)'}}>
-              Projekt anfragen <ArrowRight size={18} />
+          <div style={{ display: "flex", gap: "16px", marginTop: "24px" }}>
+            <a
+              href="#kontakt"
+              className="home-btn-orange"
+              style={{ boxShadow: "0 10px 15px -3px rgba(249,115,22,0.3)" }}
+            >
+              Kostenlose Beratung <ArrowRight size={18} />
             </a>
-            <a href="https://wa.me/496074960620" target="_blank" rel="noopener noreferrer" className="home-btn-navy">
-              WhatsApp schreiben <MessageSquare size={18} color="orange" />
+            <a
+              href="https://wa.me/496074960620"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-btn-navy"
+            >
+              WhatsApp schreiben <MessageSquare size={18} color="#fff" />
             </a>
           </div>
 
-          <div style={{display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#4b5563', fontWeight: '500', marginBottom: '32px'}}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              fontSize: "14px",
+              color: "#4b5563",
+              fontWeight: "500",
+              marginTop: "24px",
+              marginBottom: "32px",
+            }}
+          >
             <Camera size={16} />
             <span>Fotos senden. Erste Einschätzung erhalten.</span>
           </div>
