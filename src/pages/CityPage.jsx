@@ -3,8 +3,6 @@ import { Link } from "../router";
 import {
   Camera,
   MapPin,
-  MessageSquare,
-  Phone,
   CheckCircle2,
   ArrowRight,
   Award,
@@ -19,6 +17,7 @@ import useSeo, { buildFaqSchema } from "../useSeo";
 import SanierungskostenRechner from "../components/SanierungskostenRechner";
 import MainDecisionSection from "../components/MainDecisionSection";
 import VideoSection from "../components/VideoSection";
+import SharedCTABlock from "../components/SharedCTABlock";
 
 const cityDataMap = {
   frankfurt: {
@@ -2800,30 +2799,7 @@ export default function CityPage({ cityId }) {
     image: city.heroImg,
     jsonLd: [buildFaqSchema(faqsData)],
   });
-
-  const SharedCTABlock = ({ isHero = false }) => (
-    <div className="home-hero-actions">
-      <a
-        href="#kontakt"
-        className="home-btn-orange"
-        style={{ boxShadow: "0 10px 15px -3px rgba(249,115,22,0.3)" }}
-      >
-        Kostenlose Beratung <ArrowRight size={18} />
-      </a>
-      <a
-        href="https://wa.me/496074960620"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="home-btn-navy"
-      >
-        WhatsApp schreiben <MessageSquare size={18} color="#fff" />
-      </a>
-      <a href="tel:+496074960620" className="home-btn-white">
-        Jetzt anrufen
-      </a>
-    </div>
-  );
-
+  
   return (
     <main className="badsanierung-page">
       {/* 1. HERO */}
@@ -2843,7 +2819,7 @@ export default function CityPage({ cityId }) {
               unterstützen wir Sie bei Ihrem Projekt in {city.name} – zum
               Festpreis und aus einer Hand.
             </p>
-            <SharedCTABlock isHero={true} />
+            <SharedCTABlock  />
             <p className="br-hero-micro mt-4">
               <Camera size={14} /> Fotos senden. Erste Einschätzung erhalten.
             </p>
